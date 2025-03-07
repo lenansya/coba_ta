@@ -7,8 +7,6 @@ class Film {
   final String releaseDate;
   final List<String> characters;
   final List<String> planets;
-  final List<String> starships;
-  final List<String> vehicles;
   final List<String> species;
 
   Film({
@@ -20,8 +18,6 @@ class Film {
     required this.releaseDate,
     required this.characters,
     required this.planets,
-    required this.starships,
-    required this.vehicles,
     required this.species,
   });
 
@@ -35,8 +31,6 @@ class Film {
       releaseDate: json['properties']['release_date'] ?? 'Unknown Release Date',
       characters: List<String>.from(json['properties']['characters'] ?? []),
       planets: List<String>.from(json['properties']['planets'] ?? []),
-      starships: List<String>.from(json['properties']['starships'] ?? []),
-      vehicles: List<String>.from(json['properties']['vehicles'] ?? []),
       species: List<String>.from(json['properties']['species'] ?? []),
     );
   }

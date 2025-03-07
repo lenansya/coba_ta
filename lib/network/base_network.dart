@@ -2,13 +2,13 @@ import 'dart:convert';
 import 'package:http/http.dart' as http;
 
 class BaseNetwork {
-  static const String baseUrl = 'https://www.swapi.tech/api/films/';
+  static const String baseUrl = 'https://www.swapi.tech/api/';
   static Future<List<dynamic>> getData(String endpoint) async {
     final response = await http.get(Uri.parse(baseUrl + endpoint));
 
     if (response.statusCode == 200) {
       final data = jsonDecode(response.body);
-      return data[endpoint] ?? [];
+      return data['result'] ?? [];
     } else {
       throw Exception ("Failed to load data!");
     }
